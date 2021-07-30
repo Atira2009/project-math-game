@@ -22,14 +22,14 @@ document.getElementById("player_question").innerHTML = "Question turn - " + play
 document.getElementById("player_answer").innerHTML = "Answer turn - " + player2_name;
 
 function send() {
-    number1 = document.getElementById("number1").value;
-    number2 = document.getElementById("number2").value;
+    number1 = document.getElementById("word1").value;
+    number2 = document.getElementById("word2").value;
     aa = parseInt(number1) * parseInt(number2);
     qn = "<h4>" + number1 + "X" + number2 + "</h4>";
     input_box = "<br>Answer : <input type='text' id='icb'>";
     cb = "<br><br><button class='btn btn-info' onclick='check()'>Check</button>";
-    row = gn + input_box + cb;
+    row = qn + input_box + cb;
     document.getElementById("output").innerHTML = row;
-    document.getElementById("number1").value = "";
-    document.getElementById("number2").value = "";
+    document.getElementById("word1").value = "";
+    document.getElementById("word2").value = "";
 }
