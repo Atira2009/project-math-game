@@ -33,3 +33,44 @@ function send() {
     document.getElementById("word1").value = "";
     document.getElementById("word2").value = "";
 }
+qt = "player1";
+at = "player2";
+function check(){
+    get_answer = document.getElementById("icb").value;
+    answer = get_answer.toLowerCase();
+    if(answer == aa){
+        setTimeout(function () {document.getElementById('gtw').style.display='none'}, 5000);
+        document.getElementById("gtw").innerHTML = "You guessed it right!!!";
+        document.getElementById("gtw").style.color = "green";
+        if(at == "player1name"){
+            player1_score = player1_score + 1;
+            document.getElementById("player1_score").innerHTML = player1_score;
+        }
+        else{
+            player2_score = player2_score + 1;
+            document.getElementById("player2_score").innerHTML = player2_score;
+        }
+    }
+    else{
+        setTimeout(function () {document.getElementById('gtw').style.display='none'}, 5000);
+        document.getElementById("gtw").innerHTML = "You guessed it wrong";
+        document.getElementById("gtw").style.color = "red";
+    }
+    if(qt == "player1name"){
+        qt = "player2name"
+        document.getElementById("player_question").innerHTML = "Question turn - " + player2_name;
+    }
+    else{
+        qt = "player1name"
+        document.getElementById("player_question").innerHTML = "Question turn - " + player1_name;
+    }
+    if(at == "player1name"){
+        at = "player2name"
+        document.getElementById("player_answer").innerHTML = "Answer turn - " + player2_name;
+    }
+    else{
+        at = "player1name"
+        document.getElementById("player_answer").innerHTML = "Answer turn - " + player1_name;
+    }
+    document.getElementById("output").innerHTML = "";
+}
